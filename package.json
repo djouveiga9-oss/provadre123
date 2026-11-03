@@ -1,9 +1,7 @@
 {
-  "name": "portal-inscricoes-dre-rp",
+  "name": "prova-dre",
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "dependencies": {
-    "@netlify/blobs": "^8.1.0"
-  }
+  "dependencies": { "@netlify/blobs": "^8.1.0" }
 }

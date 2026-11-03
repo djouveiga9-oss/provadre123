@@ -35,7 +35,7 @@ export default async (request) => {
   if (action === "exam-submit") {
     const d = body.data || {};
     const name = clean(d.name), discordName = clean(d.discordName), gameId = clean(d.gameId);
-    if (!name || !discordName || !gameId) return json(400, { error: "Preencha nome, nome no Discord e ID no jogo." });
+    if (!name || !discordName || !gameId) return json(400, { error: "Preencha o nome do candidato, o nome no Discord e o ID no jogo." });
     if (!Array.isArray(d.answers) || d.answers.length !== examQuestions.length || d.answers.some((v, i) => !Number.isInteger(v) || v < 0 || v > 3)) return json(400, { error: "Responda às 20 questões antes de enviar a prova." });
     const correctAnswers = examQuestions.map(q => q.correct);
     const score = d.answers.reduce((sum, answer, i) => sum + (answer === correctAnswers[i] ? 1 : 0), 0);
